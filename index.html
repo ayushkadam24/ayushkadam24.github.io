@@ -452,6 +452,38 @@
 
   .timeline-item:nth-child(2) .timeline-list li::before { color: var(--accent2); }
 
+  .timeline-projects {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .timeline-projects-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-item:nth-child(2) .timeline-projects-title { color: var(--accent2); }
+
+  .timeline-project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .timeline-proj-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
   /* PROJECTS */
   #projects {
     padding: 8rem 0;
@@ -516,6 +548,14 @@
     font-family: 'DM Mono', monospace;
   }
 
+  .proj-role {
+    font-size: 0.72rem;
+    color: var(--accent2);
+    margin-bottom: 0.6rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
   .proj-outcome {
     font-size: 0.85rem;
     color: var(--muted);
@@ -537,6 +577,28 @@
     color: var(--muted);
     border: 1px solid var(--border);
     letter-spacing: 0.04em;
+  }
+
+  .proj-company-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    padding: 0.15rem 0.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: inline-block;
+  }
+
+  .badge-prutech {
+    background: rgba(0,212,255,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(0,212,255,0.2);
+  }
+
+  .badge-ast {
+    background: rgba(123,92,245,0.1);
+    color: var(--accent2);
+    border: 1px solid rgba(123,92,245,0.2);
   }
 
   /* SKILLS */
@@ -571,6 +633,9 @@
   .skill-category:nth-child(4)::before { background: linear-gradient(90deg, var(--accent), var(--accent3)); }
   .skill-category:nth-child(5)::before { background: linear-gradient(90deg, var(--accent2), var(--accent)); }
   .skill-category:nth-child(6)::before { background: linear-gradient(90deg, var(--accent3), var(--accent2)); }
+  .skill-category:nth-child(7)::before { background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+  .skill-category:nth-child(8)::before { background: linear-gradient(90deg, var(--accent2), var(--accent3)); }
+  .skill-category:nth-child(9)::before { background: linear-gradient(90deg, var(--accent3), var(--accent)); }
 
   .skill-cat-title {
     font-family: 'Syne', sans-serif;
@@ -607,6 +672,31 @@
     padding: 8rem 0;
   }
 
+  .certs-section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+    margin-top: 2.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .certs-section-title:first-of-type { margin-top: 0; }
+
+  .certs-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    background: rgba(0,212,255,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(0,212,255,0.2);
+  }
+
   .certs-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -625,6 +715,11 @@
   .cert-card:hover {
     border-color: rgba(123,92,245,0.4);
     background: rgba(123,92,245,0.05);
+  }
+
+  .cert-card.cert-highlight {
+    border-color: rgba(0,212,255,0.25);
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(0,212,255,0.04) 100%);
   }
 
   .cert-icon {
@@ -652,6 +747,13 @@
     color: var(--accent2);
   }
 
+  .cert-score {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent3);
+    margin-top: 0.2rem;
+  }
+
   /* AWARDS */
   #awards {
     padding: 8rem 0;
@@ -660,7 +762,7 @@
 
   .awards-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
   }
 
@@ -691,7 +793,7 @@
 
   .award-title {
     font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
   }
@@ -709,11 +811,108 @@
     line-height: 1.6;
   }
 
+  /* EDUCATION */
+  #education {
+    padding: 8rem 0;
+  }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .edu-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+
+  .edu-card:nth-child(2)::before { background: linear-gradient(90deg, var(--accent2), var(--accent3)); }
+
+  .edu-card:hover { border-color: rgba(0,212,255,0.3); }
+
+  .edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-school {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
+  .edu-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent2);
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-detail {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* PUBLICATION */
+  #publication {
+    padding: 4rem 0;
+    background: var(--surface);
+  }
+
+  .pub-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .pub-icon {
+    width: 48px; height: 48px;
+    background: rgba(123,92,245,0.1);
+    border: 1px solid rgba(123,92,245,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
+
+  .pub-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .pub-journal {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
   /* CONTACT */
   #contact {
     padding: 8rem 0;
-    position: relative;
-    overflow: hidden;
   }
 
   .contact-glow {
@@ -841,7 +1040,8 @@
     .projects-grid, .skills-grid { grid-template-columns: 1fr 1fr; }
     .project-card.featured { grid-column: span 1; }
     .certs-grid { grid-template-columns: repeat(2, 1fr); }
-    .awards-row { grid-template-columns: 1fr; }
+    .awards-row { grid-template-columns: 1fr 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
     .hero-stats { gap: 2rem; }
   }
 
@@ -850,6 +1050,7 @@
     h1 { font-size: 2.8rem; }
     .hero-stats { flex-direction: column; gap: 1.5rem; }
     .about-cards { grid-template-columns: 1fr 1fr; }
+    .awards-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
@@ -865,6 +1066,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certs">Certifications</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -896,7 +1098,7 @@
         <div class="stat-label">Enterprise Projects</div>
       </div>
       <div>
-        <div class="stat-num">18</div>
+        <div class="stat-num">29+</div>
         <div class="stat-label">Certifications</div>
       </div>
       <div>
@@ -918,6 +1120,7 @@
         </div>
         <p>I'm a <strong>Salesforce Certified Application Architect</strong> and POD Lead specialising in public sector digital transformation. I architect and deliver end-to-end solutions for US government clients — turning legacy paper-based systems into modern, scalable cloud platforms.</p>
         <p>With an MBA in IT Strategy &amp; Project Management, I bridge the gap between business requirements and technical delivery — leading cross-functional teams, driving pre-sales engagements, and managing CI/CD pipelines from concept to production.</p>
+        <p>I'm also pioneering <strong>AI-augmented Salesforce development using Claude Code</strong> — building multi-agent workflows, automated quality gates, and agentic CI/CD pipelines. I'm an <strong>Anthropic Claude Certified Architect (Foundations)</strong> with a score of 915/1000.</p>
         <p>Currently at <strong>PruTech Solutions</strong>, I lead a POD of 6 engineers, delivering 3 releases per sprint for clients like the NYC Department of Education.</p>
       </div>
       <div class="about-cards">
@@ -926,8 +1129,8 @@
           <div class="card-label">Enterprise Projects Delivered</div>
         </div>
         <div class="about-card">
-          <div class="card-num">18</div>
-          <div class="card-label">Salesforce Certifications</div>
+          <div class="card-num">29+</div>
+          <div class="card-label">Total Certifications</div>
         </div>
         <div class="about-card">
           <div class="card-num">4</div>
@@ -950,6 +1153,7 @@
       <h2>Where I've Worked</h2>
     </div>
     <div class="timeline">
+      <!-- PruTech -->
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-meta">
@@ -960,13 +1164,28 @@
         <div class="timeline-role">Salesforce Technical Consultant &amp; POD Lead · Bengaluru, India</div>
         <ul class="timeline-list">
           <li>Led a cross-functional POD of 6 engineers delivering Salesforce solutions for US government clients — consistently delivering 3 releases per sprint using Agile (Scrum).</li>
-          <li>Architected scalable cloud solutions serving 50,000+ government users across Service Cloud, Public Sector Cloud, and Experience Cloud.</li>
+          <li>Architected and deployed ECMS (Early Childhood Management Services) for NYC DOE on Public Sector Cloud, OmniStudio, and Agentforce — solution now serving 50,000+ government users in production.</li>
+          <li>Led SALUS (St. Louis Violence Prevention) as Team Lead — directed a team of 4 developers to deliver a full case tracking and community outreach platform on time and within scope.</li>
+          <li>Drove HPD (NY Housing Preservation &amp; Development) pre-sales engagement — discovery workshops, solution demos, and technical proposals contributing to new contract wins.</li>
+          <li>Delivered DHCR (NY Division of Housing &amp; Community Renewal) — digitised housing licensing and permitting workflows, transforming paper-based processes into end-to-end digital solutions.</li>
+          <li>Pioneered AI-augmented development using Claude Code — built multi-agent Salesforce development workflows with automated code review agents, test generation agents, and deployment helper agents, reducing feature build time by 60%.</li>
           <li>Led Agentforce (AI &amp; Automation Cloud) adoption — reduced manual case routing time by 40% through intelligent agent workflows.</li>
           <li>Integrated AWS services with Salesforce CTI — reduced average call handling time by 50%, improving government client SLAs.</li>
-          <li>Drove pre-sales engagements via discovery workshops, solution demos, and technical proposals — contributing to new contract wins.</li>
+          <li>Managed end-to-end CI/CD deployments via Copado pipelines, ensuring zero-downtime releases across sandbox and production environments.</li>
           <li>🏆 Mountain Mover Award (Sep 2025) for exceptional delivery and client satisfaction.</li>
         </ul>
+        <div class="timeline-projects">
+          <div class="timeline-projects-title">Projects at PruTech (in order)</div>
+          <div class="timeline-project-tags">
+            <span class="timeline-proj-tag">DHCR — NY Housing</span>
+            <span class="timeline-proj-tag">HPD — Pre-Sales/Demo</span>
+            <span class="timeline-proj-tag">SALUS — St. Louis</span>
+            <span class="timeline-proj-tag">ECMS — NYC DOE (Current)</span>
+          </div>
+        </div>
       </div>
+
+      <!-- AST LLC -->
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-meta">
@@ -976,11 +1195,27 @@
         <div class="timeline-role">Technical Associate Consultant — Salesforce Admin &amp; Developer · Pune, India</div>
         <ul class="timeline-list">
           <li>Promoted from Project Trainee to Technical Associate Consultant within 12 months — one of the fastest progressions in the delivery team.</li>
-          <li>Delivered Salesforce implementations for 8+ US public sector projects including NYC DOE, State of Utah (multi-agency), and DHCR.</li>
-          <li>Led a team of 4 developers on the SALUS (St. Louis Violence Prevention) project — delivered the full platform on time and within scope.</li>
+          <li>Delivered 8+ US public sector projects across multiple state agencies using both Agile and Waterfall methodologies.</li>
+          <li>Automated multi-agency licensing workflows for State of Utah (DRE, DOPL, Securities, Consumer Protection, Commerce Investigations, Case Management) — migrated 100,000+ records at 100% data integrity.</li>
+          <li>Led U.S. Silica Org Merge as Architect/Consultant — enterprise Salesforce org consolidation including data migration, metadata API management, and system enhancement.</li>
+          <li>Delivered Massachusetts Economic Department Incentive Program and Mass DTC — configuring security models, custom objects, and automation workflows.</li>
+          <li>Developed custom Apex triggers, LWC components, Visualforce pages, and complex Flows to automate licensing, permitting, and inspection workflows.</li>
           <li>Executed large-scale data migrations ensuring 100% data integrity across 100,000+ records for state government agencies.</li>
           <li>🏆 Rising Star (Aug 2022 &amp; Jun 2023) · AST's Got Talent 1st Place (Dec 2022).</li>
         </ul>
+        <div class="timeline-projects">
+          <div class="timeline-projects-title">Projects at AST (in order)</div>
+          <div class="timeline-project-tags">
+            <span class="timeline-proj-tag">Massachusetts Econ. Dept.</span>
+            <span class="timeline-proj-tag">Utah — Case Mgmt</span>
+            <span class="timeline-proj-tag">Utah — Consumer Protection</span>
+            <span class="timeline-proj-tag">Utah — DRE &amp; DOPL</span>
+            <span class="timeline-proj-tag">Utah — Commerce Investigations</span>
+            <span class="timeline-proj-tag">Utah — Securities LPI</span>
+            <span class="timeline-proj-tag">U.S. Silica Org Merge</span>
+            <span class="timeline-proj-tag">Mass DTC</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -994,59 +1229,99 @@
       <h2>What I've Built</h2>
     </div>
     <div class="projects-grid">
+
+      <!-- ECMS -->
       <div class="project-card featured">
         <div class="proj-num">01 · FEATURED</div>
+        <span class="proj-company-badge badge-prutech">PruTech Solutions</span>
         <div class="proj-title">ECMS — Education Case Management System</div>
         <div class="proj-client">NYC Department of Education</div>
-        <div class="proj-outcome">Digitised childhood case management for 50,000+ government users. Leading POD of 6 engineers with 3 releases per sprint — ongoing for 1+ year. Integrated Agentforce AI for intelligent case routing.</div>
+        <div class="proj-role">POD Lead · 1+ year · Ongoing</div>
+        <div class="proj-outcome">Digitised childhood case management for 50,000+ government users. Leading POD of 6 engineers with 3 releases per sprint. Integrated Agentforce AI for intelligent case routing and Claude Code for AI-augmented development.</div>
         <div class="proj-tags">
           <span class="tag">Public Sector Cloud</span>
           <span class="tag">OmniStudio</span>
           <span class="tag">Apex</span>
           <span class="tag">LWC</span>
           <span class="tag">Agentforce AI</span>
+          <span class="tag">Claude Code</span>
           <span class="tag">POD Lead</span>
         </div>
       </div>
+
+      <!-- SALUS -->
       <div class="project-card">
         <div class="proj-num">02</div>
+        <span class="proj-company-badge badge-prutech">PruTech Solutions</span>
         <div class="proj-title">SALUS Violence Prevention Platform</div>
         <div class="proj-client">St. Louis City</div>
-        <div class="proj-outcome">Full case tracking and community outreach platform for violence prevention — delivered on schedule, leading team of 4 developers over 6 months.</div>
+        <div class="proj-role">Team Lead · 6 months · Completed</div>
+        <div class="proj-outcome">Full case tracking and community outreach platform for violence prevention — delivered on schedule, leading team of 4 developers.</div>
         <div class="proj-tags">
           <span class="tag">Public Sector Cloud</span>
           <span class="tag">LWC</span>
           <span class="tag">Flows</span>
           <span class="tag">Service Cloud</span>
+          <span class="tag">Claude Code</span>
         </div>
       </div>
+
+      <!-- HPD -->
       <div class="project-card">
         <div class="proj-num">03</div>
-        <div class="proj-title">State of Utah Multi-Agency Licensing</div>
-        <div class="proj-client">DRE · DOPL · Securities Division</div>
-        <div class="proj-outcome">Automated multi-agency licensing workflows and migrated 100,000+ records with 100% data integrity.</div>
+        <span class="proj-company-badge badge-prutech">PruTech Solutions</span>
+        <div class="proj-title">HPD — Housing Preservation &amp; Development</div>
+        <div class="proj-client">NY Housing Preservation &amp; Development</div>
+        <div class="proj-role">Pre-Sales / Demo</div>
+        <div class="proj-outcome">Drove pre-sales engagement — discovery workshops, solution demos, and technical proposals contributing to new government contract acquisitions.</div>
         <div class="proj-tags">
-          <span class="tag">OmniStudio</span>
-          <span class="tag">Apex</span>
-          <span class="tag">Data Loader</span>
+          <span class="tag">Public Sector Cloud</span>
           <span class="tag">LWC</span>
+          <span class="tag">OmniStudio</span>
+          <span class="tag">Pre-Sales</span>
         </div>
       </div>
+
+      <!-- DHCR -->
       <div class="project-card">
         <div class="proj-num">04</div>
+        <span class="proj-company-badge badge-prutech">PruTech Solutions</span>
         <div class="proj-title">DHCR Housing &amp; Permitting</div>
         <div class="proj-client">NY Division of Housing &amp; Community Renewal</div>
-        <div class="proj-outcome">Paper-to-digital transformation of housing licensing and permitting workflows.</div>
+        <div class="proj-role">Developer</div>
+        <div class="proj-outcome">Paper-to-digital transformation of housing licensing and permitting workflows using LWC, Flows, and Visualforce.</div>
         <div class="proj-tags">
           <span class="tag">Public Sector Cloud</span>
           <span class="tag">Flows</span>
+          <span class="tag">LWC</span>
           <span class="tag">Visualforce</span>
         </div>
       </div>
+
+      <!-- State of Utah -->
+      <div class="project-card featured">
+        <div class="proj-num">05 · MULTI-AGENCY</div>
+        <span class="proj-company-badge badge-ast">AST LLC / IBM</span>
+        <div class="proj-title">State of Utah — Multi-Agency Licensing &amp; Compliance</div>
+        <div class="proj-client">DRE · DOPL · Securities · Consumer Protection · Commerce Investigations · Case Management</div>
+        <div class="proj-role">Developer / Consultant · 6 sub-projects</div>
+        <div class="proj-outcome">Automated multi-agency licensing, permitting, and inspection workflows. Migrated 100,000+ records at 100% data integrity across 6 agency sub-projects.</div>
+        <div class="proj-tags">
+          <span class="tag">Public Sector Cloud</span>
+          <span class="tag">OmniStudio</span>
+          <span class="tag">Apex</span>
+          <span class="tag">LWC</span>
+          <span class="tag">Data Loader</span>
+        </div>
+      </div>
+
+      <!-- U.S. Silica -->
       <div class="project-card">
-        <div class="proj-num">05</div>
+        <div class="proj-num">06</div>
+        <span class="proj-company-badge badge-ast">AST LLC / IBM</span>
         <div class="proj-title">U.S. Silica Org Merge</div>
         <div class="proj-client">U.S. Silica (Private Sector)</div>
+        <div class="proj-role">Architect / Consultant</div>
         <div class="proj-outcome">Enterprise Salesforce org consolidation — led architecture, data migration, and system enhancement using Copado CI/CD.</div>
         <div class="proj-tags">
           <span class="tag">Metadata API</span>
@@ -1054,6 +1329,23 @@
           <span class="tag">Data Loader</span>
         </div>
       </div>
+
+      <!-- Massachusetts -->
+      <div class="project-card">
+        <div class="proj-num">07</div>
+        <span class="proj-company-badge badge-ast">AST LLC / IBM</span>
+        <div class="proj-title">Massachusetts Economic Department &amp; Mass DTC</div>
+        <div class="proj-client">Massachusetts Economic Department</div>
+        <div class="proj-role">Developer</div>
+        <div class="proj-outcome">Developed and implemented Salesforce solutions for state economic development and incentive programs.</div>
+        <div class="proj-tags">
+          <span class="tag">Salesforce Platform</span>
+          <span class="tag">Apex</span>
+          <span class="tag">Flows</span>
+          <span class="tag">LWC</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1076,6 +1368,7 @@
           <span class="skill-chip">OmniStudio</span>
           <span class="skill-chip">Agentforce</span>
           <span class="skill-chip">Platform Cloud</span>
+          <span class="skill-chip">LPI</span>
         </div>
       </div>
       <div class="skill-category">
@@ -1087,6 +1380,8 @@
           <span class="skill-chip">Visualforce</span>
           <span class="skill-chip">Triggers</span>
           <span class="skill-chip">REST/SOAP APIs</span>
+          <span class="skill-chip">HTML/CSS/JS</span>
+          <span class="skill-chip">SLDS</span>
         </div>
       </div>
       <div class="skill-category">
@@ -1095,18 +1390,23 @@
           <span class="skill-chip">OmniScripts</span>
           <span class="skill-chip">DataRaptors</span>
           <span class="skill-chip">FlexCards</span>
+          <span class="skill-chip">Record-Triggered Flows</span>
           <span class="skill-chip">Screen Flows</span>
           <span class="skill-chip">Scheduled Flows</span>
           <span class="skill-chip">Process Builder</span>
+          <span class="skill-chip">Approval Processes</span>
         </div>
       </div>
       <div class="skill-category">
         <div class="skill-cat-title">DevOps &amp; Deployment</div>
         <div class="skill-list">
           <span class="skill-chip">Copado CI/CD</span>
+          <span class="skill-chip">GitHub Actions</span>
           <span class="skill-chip">Change Sets</span>
           <span class="skill-chip">Metadata API</span>
           <span class="skill-chip">Git</span>
+          <span class="skill-chip">Bitbucket</span>
+          <span class="skill-chip">ANT Tool</span>
           <span class="skill-chip">Sandbox Strategy</span>
           <span class="skill-chip">Release Management</span>
         </div>
@@ -1119,6 +1419,30 @@
           <span class="skill-chip">Cloud Architecture</span>
           <span class="skill-chip">Security Model</span>
           <span class="skill-chip">BRD Authoring</span>
+          <span class="skill-chip">User Story Writing</span>
+          <span class="skill-chip">System Architecture</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">AI-Augmented Development</div>
+        <div class="skill-list">
+          <span class="skill-chip">Claude Code</span>
+          <span class="skill-chip">Multi-Agent Workflows</span>
+          <span class="skill-chip">Agentic CI/CD</span>
+          <span class="skill-chip">AI Code Review</span>
+          <span class="skill-chip">Salesforce DX MCP</span>
+          <span class="skill-chip">Agent Swarming</span>
+          <span class="skill-chip">Quality Gates</span>
+          <span class="skill-chip">Model Context Protocol</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">Data Migration</div>
+        <div class="skill-list">
+          <span class="skill-chip">Data Loader</span>
+          <span class="skill-chip">Data Import Wizard</span>
+          <span class="skill-chip">Workbench</span>
+          <span class="skill-chip">Excel/CSV Migration</span>
         </div>
       </div>
       <div class="skill-category">
@@ -1127,9 +1451,22 @@
           <span class="skill-chip">Agentforce AI</span>
           <span class="skill-chip">Einstein AI</span>
           <span class="skill-chip">AWS CTI</span>
-          <span class="skill-chip">Claude AI</span>
+          <span class="skill-chip">Claude Code</span>
+          <span class="skill-chip">Claude Cowork</span>
           <span class="skill-chip">ChatGPT</span>
           <span class="skill-chip">Gemini</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">Methodologies</div>
+        <div class="skill-list">
+          <span class="skill-chip">Agile (Scrum)</span>
+          <span class="skill-chip">Waterfall</span>
+          <span class="skill-chip">Sprint Planning</span>
+          <span class="skill-chip">Backlog Grooming</span>
+          <span class="skill-chip">Stakeholder Mgmt</span>
+          <span class="skill-chip">Pre-Sales</span>
+          <span class="skill-chip">Digital Transformation</span>
         </div>
       </div>
     </div>
@@ -1141,18 +1478,26 @@
   <div class="container">
     <div class="section-header">
       <p class="section-tag">// certifications</p>
-      <h2>18 Salesforce Certifications</h2>
+      <h2>29+ Professional Certifications</h2>
     </div>
+
+    <!-- Salesforce -->
+    <div class="certs-section-title">Salesforce Architecture &amp; Development <span class="certs-count">10</span></div>
     <div class="certs-grid">
-      <div class="cert-card">
+      <div class="cert-card cert-highlight">
         <div class="cert-icon">🏛️</div>
         <div class="cert-name">Salesforce Certified Application Architect</div>
         <div class="cert-date">Oct 2025</div>
       </div>
-      <div class="cert-card">
+      <div class="cert-card cert-highlight">
         <div class="cert-icon">🗄️</div>
         <div class="cert-name">Salesforce Certified Platform Data Architect</div>
         <div class="cert-date">Oct 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🌐</div>
+        <div class="cert-name">Salesforce Certified Experience Cloud Consultant</div>
+        <div class="cert-date">Jun 2025</div>
       </div>
       <div class="cert-card">
         <div class="cert-icon">🤖</div>
@@ -1160,13 +1505,8 @@
         <div class="cert-date">Nov 2024</div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon">☁️</div>
-        <div class="cert-name">Salesforce Certified Experience Cloud Consultant</div>
-        <div class="cert-date">Jun 2025</div>
-      </div>
-      <div class="cert-card">
         <div class="cert-icon">🔒</div>
-        <div class="cert-name">Sharing &amp; Visibility Designer</div>
+        <div class="cert-name">Sharing &amp; Visibility Architect</div>
         <div class="cert-date">Aug 2024</div>
       </div>
       <div class="cert-card">
@@ -1175,9 +1515,9 @@
         <div class="cert-date">Jul 2023</div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon">💻</div>
-        <div class="cert-name">Platform Developer I</div>
-        <div class="cert-date">Aug 2022</div>
+        <div class="cert-icon">🧩</div>
+        <div class="cert-name">Platform Foundations</div>
+        <div class="cert-date">Apr 2023</div>
       </div>
       <div class="cert-card">
         <div class="cert-icon">🔧</div>
@@ -1185,24 +1525,125 @@
         <div class="cert-date">Oct 2022</div>
       </div>
       <div class="cert-card">
+        <div class="cert-icon">💻</div>
+        <div class="cert-name">Platform Developer I</div>
+        <div class="cert-date">Aug 2022</div>
+      </div>
+      <div class="cert-card">
         <div class="cert-icon">📋</div>
         <div class="cert-name">Salesforce Administrator (SCA)</div>
         <div class="cert-date">May 2022</div>
       </div>
+    </div>
+
+    <!-- Copado -->
+    <div class="certs-section-title">Copado DevOps <span class="certs-count">8</span></div>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-icon">🧠</div>
+        <div class="cert-name">Copado AI</div>
+        <div class="cert-date">Mar 2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🧪</div>
+        <div class="cert-name">Copado Robotic Testing</div>
+        <div class="cert-date">Jul 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔌</div>
+        <div class="cert-name">Copado Extension Builder</div>
+        <div class="cert-date">Jul 2025</div>
+      </div>
       <div class="cert-card">
         <div class="cert-icon">🚀</div>
-        <div class="cert-name">Copado Fundamentals I &amp; II (Source Format)</div>
+        <div class="cert-name">Copado Essentials+</div>
         <div class="cert-date">Jun 2025</div>
       </div>
       <div class="cert-card">
-        <div class="cert-icon">🔄</div>
-        <div class="cert-name">Copado Fundamentals II (Metadata Format)</div>
+        <div class="cert-icon">📦</div>
+        <div class="cert-name">Fundamentals II (Source Format)</div>
         <div class="cert-date">Jun 2025</div>
       </div>
+      <div class="cert-card">
+        <div class="cert-icon">📦</div>
+        <div class="cert-name">Fundamentals II (Metadata Format)</div>
+        <div class="cert-date">Jun 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📦</div>
+        <div class="cert-name">Fundamentals I (Source Format)</div>
+        <div class="cert-date">Jun 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📦</div>
+        <div class="cert-name">Fundamentals I (Metadata Format)</div>
+        <div class="cert-date">Sep 2023</div>
+      </div>
+    </div>
+
+    <!-- Anthropic -->
+    <div class="certs-section-title">Anthropic Academy &amp; AI (Claude Certified) <span class="certs-count">9</span></div>
+    <div class="certs-grid">
+      <div class="cert-card cert-highlight">
+        <div class="cert-icon">🎓</div>
+        <div class="cert-name">Claude Certified Architect — Foundations (Early Adopter)</div>
+        <div class="cert-date">Mar 2026</div>
+        <div class="cert-score">Score: 915 / 1000</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔗</div>
+        <div class="cert-name">Model Context Protocol: Advanced Topics</div>
+        <div class="cert-date">Mar 2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-name">Introduction to Subagents</div>
+        <div class="cert-date">Mar 2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">⚡</div>
+        <div class="cert-name">Introduction to Agent Skills</div>
+        <div class="cert-date">Mar 2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🧑‍💻</div>
+        <div class="cert-name">Introduction to Claude Cowork</div>
+        <div class="cert-date">Mar 2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔗</div>
+        <div class="cert-name">Introduction to Model Context Protocol</div>
+        <div class="cert-date">Feb 2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">💻</div>
+        <div class="cert-name">Claude Code in Action</div>
+        <div class="cert-date">Feb 2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🧠</div>
+        <div class="cert-name">AI Fluency: Framework &amp; Foundations</div>
+        <div class="cert-date">Feb 2026</div>
+      </div>
+    </div>
+
+    <!-- Other -->
+    <div class="certs-section-title">Other Certifications <span class="certs-count">3</span></div>
+    <div class="certs-grid">
       <div class="cert-card">
         <div class="cert-icon">☁️</div>
         <div class="cert-name">Oracle Cloud AI Foundations Associate</div>
         <div class="cert-date">Aug 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🐍</div>
+        <div class="cert-name">98-381: MTA — Intro to Programming Using Python</div>
+        <div class="cert-date">Microsoft</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🇮🇳</div>
+        <div class="cert-name">Junior Software Developer (SSC/Q0508)</div>
+        <div class="cert-date">Ministry of Skill Development, India</div>
       </div>
     </div>
   </div>
@@ -1225,14 +1666,57 @@
       <div class="award-card">
         <div class="award-icon">⭐</div>
         <div class="award-title">Rising Star</div>
-        <div class="award-org">AST LLC / IBM · Jun 2023 &amp; Aug 2022</div>
-        <div class="award-desc">Top performer recognition across two consecutive review cycles at AST LLC, an IBM Company.</div>
+        <div class="award-org">AST LLC / IBM · Jun 2023</div>
+        <div class="award-desc">Top performer recognition for Project Utah — consecutive review cycle recognition.</div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">⭐</div>
+        <div class="award-title">Rising Star</div>
+        <div class="award-org">AST LLC / IBM · Aug 2022</div>
+        <div class="award-desc">Top performer recognition for Project MOBD — recognised within first 8 months.</div>
       </div>
       <div class="award-card">
         <div class="award-icon">🏆</div>
         <div class="award-title">AST's Got Talent — 1st Place</div>
         <div class="award-org">AST LLC / IBM · Dec 2022</div>
         <div class="award-desc">Won the company-wide talent competition, demonstrating technical excellence and innovation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">// education</p>
+      <h2>Academic Background</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">Master of Business Administration (MBA)</div>
+        <div class="edu-school">Bharati Vidyapeeth — Information Technology &amp; Project Management</div>
+        <div class="edu-date">Mar 2023 — Mar 2025</div>
+        <div class="edu-detail">Specialisation: IT Strategy &amp; Project Management — directly applied in POD delivery leadership, cross-functional team management, and stakeholder communication.</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Engineering (BE) — Computer Science</div>
+        <div class="edu-school">Jaywant College of Engineering and Polytechnic, K.M. Gad — Shivaji University, Kolhapur</div>
+        <div class="edu-date">Jan 2018 — Sep 2021 · 84%</div>
+        <div class="edu-detail">Published research paper on IoT-based Crop Management System in IRJET (Jul 2021).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATION -->
+<section id="publication">
+  <div class="container">
+    <div class="pub-card">
+      <div class="pub-icon">📄</div>
+      <div>
+        <div class="pub-title">IoT Based Humidity, Temperature Control, and Crop Management System</div>
+        <div class="pub-journal">International Research Journal of Engineering and Technology (IRJET) · Jul 2021</div>
       </div>
     </div>
   </div>
@@ -1251,6 +1735,7 @@
         <p>Looking for a Salesforce Application Architect or POD Lead to drive your digital transformation? I'd love to connect and discuss how I can help deliver value for your team.</p>
         <div class="hero-ctas">
           <a href="mailto:ayushkadam28@gmail.com" class="btn-primary">Send Me an Email</a>
+          <a href="https://ayushkadam24.github.io/" target="_blank" class="btn-outline">View Portfolio</a>
         </div>
       </div>
       <div class="contact-links">
@@ -1265,7 +1750,7 @@
           <div class="contact-link-icon">📞</div>
           <div>
             <div class="contact-link-text">Phone</div>
-            <div class="contact-link-value">+91 9130443619</div>
+            <div class="contact-link-value">+91 9130443619 / +91 8830319420</div>
           </div>
         </a>
         <a href="https://linkedin.com/in/ayush-amol-kadam" target="_blank" class="contact-link">
@@ -1273,6 +1758,13 @@
           <div>
             <div class="contact-link-text">LinkedIn</div>
             <div class="contact-link-value">linkedin.com/in/ayush-amol-kadam</div>
+          </div>
+        </a>
+        <a href="https://github.com/ayushkadam24" target="_blank" class="contact-link">
+          <div class="contact-link-icon">🔗</div>
+          <div>
+            <div class="contact-link-text">GitHub</div>
+            <div class="contact-link-value">ayushkadam24.github.io</div>
           </div>
         </a>
         <div class="contact-link">
@@ -1304,7 +1796,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.timeline-item, .project-card, .skill-category, .cert-card, .award-card').forEach(el => {
+  document.querySelectorAll('.timeline-item, .project-card, .skill-category, .cert-card, .award-card, .edu-card, .pub-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
